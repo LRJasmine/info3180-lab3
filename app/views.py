@@ -9,6 +9,8 @@ from app import app
 from flask import render_template, request, redirect, url_for, flash
 from app import mail
 from flask_mail import Message
+from .forms import ContactForm
+
 
 ###
 # Routing for your application.
@@ -27,7 +29,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-    contactform = ContactForm(FlaskForm)
+    contactform = ContactForm()
     if request.method == 'POST':
         if contactform.validate_on_submit():
             eachname = contactform.name.data
