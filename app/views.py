@@ -44,7 +44,7 @@ def contact():
 
         flash_errors(contactform)
 
-    return render_template('contact.html' form=contactform)
+    return render_template('contact.html', form=contactform)
 
 ###
 # The functions below should be applicable to all Flask apps.
