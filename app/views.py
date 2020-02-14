@@ -27,9 +27,10 @@ def about():
     """Render the website's about page."""
     return render_template('about.html', name="Mary Jane")
 
-@app.route('/contact')
+@app.route('/contact', methods = ['GET', 'POST'])
 def contact():
     contactform = ContactForm()
+
     if request.method == 'POST':
         if contactform.validate_on_submit():
             eachname = contactform.name.data
@@ -37,7 +38,8 @@ def contact():
             eachsubject = contactform.subject.data
             eachmessage = contactform.data
 
-            msg = Message(contactform.eachsubject.data, sender=(contactform.eachname.data,contactform.eachemail.data),recipients=["to@example.com"])
+            msg = Message(contactform.eachsubject.data, sender=(contactform.eachname.data,contactform.eachemail.data),
+            recipients=["to@example.com"])
             msg.body = contactform.eachmessage.data
             mail.send(msg) 
             flash('You e-mail was successfully sent', 'success')
