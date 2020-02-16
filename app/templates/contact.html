@@ -5,7 +5,7 @@
 <h2>Contact Forms</h2>
 <p>Fill in this form to contact the site owners.</p>
 <form method="POST" action="{{ url_for('contact') }}">
-    {{ form.crsf_token}}
+    {{ form.csrf_token}}
     <div class="form-group"></div>
         {{ form.name.label }} 
         <p>Please enter your full name</p>
