@@ -10,9 +10,7 @@ from flask import render_template, request, redirect, url_for, flash
 from app import mail
 from flask_mail import Message
 from .forms import ContactForm
-from flask_wtf.csrf import CSRFProtect
 
-csrf = CSRFProtect(app)
 
 ###
 # Routing for your application.
