@@ -1,8 +1,7 @@
-from flask_wtf.csrf import CSRFProtect
 from flask import Flask
 from flask_mail import Mail
-from app import mail
-from flask_mail import Message
+from flask_wtf.csrf import CSRFProtect
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'vgy67gg@ffRRt'
@@ -13,3 +12,4 @@ app.config['MAIL_PASSWORD'] = ''
 
 mail = Mail(app)
 csrf = CSRFProtect(app)
+from app import views
