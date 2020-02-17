@@ -1,0 +1,23 @@
+.contacthead {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: solid darkslategrey 2px;
+}
+
+.form-group label{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contactsendbtn {
+    color: white;
+    background-color: #3366FF;
+    padding: 10px 30px;
+    border-radius: 10%;
+}
+
+.form-group label:after { 
+    content:" (Required)"; 
+    color: red;
+    font-weight: bold;
+}

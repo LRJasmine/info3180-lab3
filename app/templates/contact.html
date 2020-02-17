@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+
 {% block main %}
 
-<h2>Contact Forms</h2>
+<h2 class="contacthead">Contact Forms</h2>
 <p>Fill in this form to contact the site owners.</p>
 <form method="POST" action="{{ url_for('contact') }}">
+    
     {{ form.csrf_token}}
-    <div class="form-group"></div>
+
+    <div class="form-group">
         {{ form.name.label }} 
         <p>Please enter your full name</p>
         {{ form.name(class="form-control") }}
@@ -36,7 +43,7 @@
         <textarea rows="8" cols="50" name="message" required></textarea>-->
     </div>
 
-    <button type="submit" class="sendbtn">Send</button>
+    <button type="submit" class="contactsendbtn">Send</button>
 
 </form>
 
