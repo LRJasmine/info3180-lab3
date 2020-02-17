@@ -38,7 +38,7 @@ def contact():
             eachsubject = contactform.subject.data
             eachmessage = contactform.message.data
 
-            msg = Message(eachsubject, sender=(eachname,eachemail))
+            msg = Message(eachsubject, sender=(eachname,eachemail), recipients=["to@example.com"])
             msg.body = eachmessage
             mail.send(msg) 
             flash('You e-mail was successfully sent', 'success')
