@@ -38,7 +38,7 @@ def contact():
             eachsubject = contactform.subject.data
             eachmessage = contactform.message.data
 
-            msg = Message(eachsubject, sender=(eachname,eachemail),recipients=["4fe3826f1e-6cd70c@inbox.mailtrap.io"])
+            msg = Message(eachsubject, sender=(eachname,eachemail))
             msg.body = eachmessage
             mail.send(msg) 
             flash('You e-mail was successfully sent', 'success')
